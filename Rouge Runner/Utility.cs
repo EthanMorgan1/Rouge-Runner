@@ -40,7 +40,7 @@ namespace Rouge_Runner
 
             if(random.Next(1,8) <= 6)
             {
-                monster.setHealth(MonsterHp - 15);
+                monster.setHealth(MonsterHp - player.GetDamage());
                 Console.WriteLine("Monster Hit");
             }
             else
