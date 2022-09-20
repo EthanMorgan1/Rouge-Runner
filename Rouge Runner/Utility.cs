@@ -45,7 +45,7 @@ namespace Rouge_Runner
             }
             else
             {
-                player.setHealth(playerHp - 15);
+                player.SetHealth(playerHp - 15);
                 Console.WriteLine("Player Hit");
             }
        }
