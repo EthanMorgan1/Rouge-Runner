@@ -12,16 +12,20 @@ namespace Rouge_Runner
 
         public static int Health;
 
+        public int Damage;
+
         public Player()
         {
             Name = "Player";
             Health = 100;
+            Damage = 10;
         }
 
         public Player(string name)
         {
             Name = name;
             Health = 100;
+            Damage = 10;
         }
 
         public void SetName(string name)
@@ -39,9 +43,19 @@ namespace Rouge_Runner
             return Health;
         }
 
-        public void setHealth(int health)
+        public void SetHealth(int health)
         {
             Health = health;
+        }
+
+        public void SetDamage(int damage)
+        {
+            Damage = damage;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public override string ToString()
