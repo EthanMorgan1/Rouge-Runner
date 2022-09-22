@@ -32,6 +32,7 @@ namespace Rouge_Runner
     {
         public List<string> cellList = new List<string>();
         public int index = 1;
+        public int playerPositin = 0;
 
         public Dungeon()
         {
@@ -74,8 +75,6 @@ namespace Rouge_Runner
         public void MovePlayer()
         {
            
-            string container = "";
-
             var move = Console.ReadKey();
 
             if (move.Key == ConsoleKey.D)
@@ -83,36 +82,29 @@ namespace Rouge_Runner
                 if (cellList[index] == "|_ _ M|")
                 {
                     
-                    container = "|_ _ M|";
-
                     cellList[index] = "|P _ M|";
 
                     cellList[index - 1] = "|_ _ _|";
-
+                    playerPositin++;
                     index++;
 
                 }
                 else if (cellList[index] == "|_ I M|")
                 {
                     
-                    container = "|_ I M|";
-
                     cellList[index] = "|P I M|";
 
                     cellList[index - 1] = "|_ _ _|";
-
+                    playerPositin++;
                     index++;
                 }
                 else if (cellList[index] == "|_ I _|")
                 {
                    
-
-                    container = "|_ I _|";
-
                     cellList[index] = "|P I _|";
 
                     cellList[index - 1] = "|_ _ _|";
-
+                    playerPositin++;
                     index++;
                 }
                 else if(cellList[index] == "|_ _ _|")
@@ -120,7 +112,7 @@ namespace Rouge_Runner
                     cellList[index] = "|P _ _|";
 
                     cellList[index - 1] = "|_ _ _|";
-
+                    playerPositin++;
                     index++;
 
                 }
@@ -129,7 +121,7 @@ namespace Rouge_Runner
                     cellList[index] = "|P _ B|";
 
                     cellList[index - 1] = "|_ _ _|";
-
+                    playerPositin++;
                     index++;
                 }
             }
@@ -137,6 +129,7 @@ namespace Rouge_Runner
             {
                 if (cellList[index - 2] == "|_ _ _|")
                 {
+                    playerPositin--;
                     index--;
                     cellList[index] = "|_ _ _|";
                     cellList[index - 1] = "|P _ _|";
