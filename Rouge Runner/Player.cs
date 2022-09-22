@@ -14,6 +14,8 @@ namespace Rouge_Runner
 
         public int Damage;
 
+        public List<int> inventory = new List<int>();
+
         public Player()
         {
             Name = "Player";

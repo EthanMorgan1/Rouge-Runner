@@ -37,17 +37,24 @@ namespace Rouge_Runner
             int MonsterHp = monster.getHealth();
 
             Random random = new Random();
+            
+            if(MonsterHp == 0 || playerHp == 0)
+            {
+                return;
+            }
 
-            if(random.Next(1,8) <= 6)
+            if(random.Next(1,10) <= 7)
             {
                 monster.setHealth(MonsterHp - player.GetDamage());
                 Console.WriteLine("Monster Hit");
             }
             else
             {
-                player.SetHealth(playerHp - 15);
+                player.SetHealth(playerHp - 5);
                 Console.WriteLine("Player Hit");
             }
+
+            Combat(player, monster);
        }
 
 

@@ -11,6 +11,7 @@
             StartofGameSetUp();
 
             Console.WriteLine(player.ToString() + "\n");
+            Console.WriteLine("(A) move left    (D) move right \n");
            
             dungeon.PrintMap();
             Console.WriteLine("\n");
@@ -20,6 +21,7 @@
                 dungeon.MovePlayer();
                 Console.Clear();
                 Console.WriteLine(player.ToString());
+                Console.WriteLine("(A) move left    (D) move right \n");
                 dungeon.PrintMap();
                 Console.WriteLine("\n");
                 if(player.GetHealth() < 0)
@@ -32,20 +34,19 @@
                 {
                     Zombie monster = new Zombie();
                     Console.WriteLine("Monster");
-                    while(monster.getHealth() > 0 && player.GetHealth() > 0)
-                    {
-                        util.Combat(player, monster);
-                    }
+                    util.Combat(player, monster);
                 }
                 else if (dungeon.cellList[dungeon.index - 1] == "|P I M|")
                 {
                     Zombie monster = new Zombie();
-                    util.WeaponChance();
+                   
                     Console.WriteLine("Monster");
-                    while(monster.getHealth() > 0 && player.GetHealth() > 0)
-                    {
-                        util.Combat(player, monster);
-                    }
+                    util.Combat(player, monster);
+                    util.WeaponChance();
+                }
+                else if (dungeon.cellList[dungeon.index - 1] == "|P I _|")
+                {
+                    util.WeaponChance();
                 }
             }
  
