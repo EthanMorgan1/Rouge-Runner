@@ -49,5 +49,17 @@ namespace Rouge_Runner
                 Console.WriteLine("Player Hit");
             }
        }
+
+
+        public void WeaponChance()
+        {
+            Random ran = new Random();
+
+            if(ran.Next(1,10) <= 5)
+            {
+                Console.WriteLine("Weapon drop!");
+
+            }
+        }
     }
 }
