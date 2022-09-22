@@ -5,6 +5,7 @@
         public static Utility util = new Utility();
         public static Player player = new Player();
         public static Dungeon dungeon = new Dungeon();
+        public static Items items = new Items();
         private static void Main(string[] args)
         {
             StartofGameSetUp();
@@ -43,6 +44,8 @@
         {
            
             Console.WriteLine("What is your name?");
+
+                
 
             player.SetName(Console.ReadLine());
 
