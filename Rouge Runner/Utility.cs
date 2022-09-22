@@ -58,7 +58,6 @@ namespace Rouge_Runner
             if(ran.Next(1,10) <= 5)
             {
                 Console.WriteLine("Weapon drop!");
-
             }
         }
     }

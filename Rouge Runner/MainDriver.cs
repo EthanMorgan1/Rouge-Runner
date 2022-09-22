@@ -22,7 +22,13 @@
                 Console.WriteLine(player.ToString());
                 dungeon.PrintMap();
                 Console.WriteLine("\n");
-                if (dungeon.cellList[dungeon.index - 1] == "|P _ M|" || dungeon.cellList[dungeon.index - 1] == "|P I M|") //Does see the monster
+                if(player.GetHealth() < 0)
+                {
+                    Console.WriteLine("Game Over");
+                    break;
+                }
+      
+                if (dungeon.cellList[dungeon.index - 1] == "|P _ M|" ) //Does see the monster
                 {
                     Zombie monster = new Zombie();
                     Console.WriteLine("Monster");
@@ -31,10 +37,15 @@
                         util.Combat(player, monster);
                     }
                 }
-                if(player.GetHealth() < 0)
+                else if (dungeon.cellList[dungeon.index - 1] == "|P I M|")
                 {
-                    Console.WriteLine("Game Over");
-                    break;
+                    Zombie monster = new Zombie();
+                    util.WeaponChance();
+                    Console.WriteLine("Monster");
+                    while(monster.getHealth() > 0 && player.GetHealth() > 0)
+                    {
+                        util.Combat(player, monster);
+                    }
                 }
             }
  
